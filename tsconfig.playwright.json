@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "types": ["playwright", "node"], // Add Playwright types
+    "lib": ["ES2020", "DOM"],        // Ensure browser types (DOM) are available
+    "module": "CommonJS",             // Playwright runs in Node, so CommonJS is preferred
+    "strict": true                    // Keep strict type-checking
+  },
+  "include": ["tests/**/*.ts"]         // Include your Playwright test files
+}

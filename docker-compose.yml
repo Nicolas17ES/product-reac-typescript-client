@@ -1,0 +1,12 @@
+version: '3'
+services:
+  react-app:
+    build: .
+    ports:
+      - '5173:5173'
+    volumes:
+      - './src:/app/src'   # Mount your local src folder into the container for live reload
+      - './public:/app/public'  # Also include the public folder
+      - './package.json:/app/package.json'
+      - './vite.config.ts:/app/vite.config.ts'
+    command: npm run dev    # Run the development server
